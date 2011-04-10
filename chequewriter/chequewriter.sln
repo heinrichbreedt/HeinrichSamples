@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chequetools", "chequetools\chequetools.csproj", "{D17456FB-DC0B-4E40-BF86-E3939FCFA531}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chequetools", "src\chequetools\chequetools.csproj", "{D17456FB-DC0B-4E40-BF86-E3939FCFA531}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chequetools.test", "chequetools.test\chequetools.test.csproj", "{FB1E90F0-A5D8-40D0-98E6-85DCD971DC7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chequetools.test", "src\chequetools.test\chequetools.test.csproj", "{FB1E90F0-A5D8-40D0-98E6-85DCD971DC7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
