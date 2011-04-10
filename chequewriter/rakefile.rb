@@ -9,6 +9,6 @@ msbuild :build do |msb|
 end
 
 nunit :unittests => :build do |nunit|
-  nunit.path = 'nunit/nunit-console.exe'
-  nunit.assemblies 'src/tests/bin/release/tests.dll'
+  nunit.command = 'packages/NUnit.2.5.9.10348/Tools/nunit-console.exe'
+  nunit.assemblies 'TestBin/chequetools.test.dll'
 end
