@@ -12,7 +12,11 @@ namespace chequetools
                 "nineteen"
             };
 
-        static readonly List<string> tens = new List<string> {"", "ten", "twenty"};
+        static readonly List<string> tens = new List<string>
+            {
+                "", "ten", "twenty", "thirty", "fourty", "fifty", 
+                "sixty", "seventy", "eighty", "ninety"
+            };
 
         public static string ToWord(this string numberText)
         {
