@@ -20,7 +20,7 @@ namespace chequetools
 
         static readonly List<string> groups = new List<string>
             {
-                "", " thousand and ", "twenty", "thirty", "fourty", "fifty", 
+                "", " thousand", "twenty", "thirty", "fourty", "fifty", 
                 "sixty", "seventy", "eighty", "ninety"
             };
 
@@ -48,7 +48,11 @@ namespace chequetools
             while(number > 0)
             {
                 var remainder = number % 1000;
-                word = GetHundredsWord(remainder) + groups[groupIndex] + word;
+                if(string.IsNullOrEmpty(word))
+                    word = GetHundredsWord(remainder) + groups[groupIndex];
+                else
+                    word = GetHundredsWord(remainder) + groups[groupIndex] + " and " + word;
+                
                 number = number/1000;
                 groupIndex++;
             }
