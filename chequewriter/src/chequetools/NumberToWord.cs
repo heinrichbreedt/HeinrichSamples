@@ -20,8 +20,7 @@ namespace chequetools
 
         static readonly List<string> groups = new List<string>
             {
-                "", " thousand", "twenty", "thirty", "fourty", "fifty", 
-                "sixty", "seventy", "eighty", "ninety"
+                "", " thousand", " million", " billion"
             };
 
         public static bool IsEvenHundred(this int number)

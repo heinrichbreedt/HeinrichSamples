@@ -80,5 +80,11 @@ namespace chequetools.test
         {
             number.ToWord().ShouldBe(word);
         }
+
+        [TestCase("33456876", "thirtythree million and four hundred and fiftysix thousand and eight hundred and seventysix")]
+        public void millions(string number, string word)
+        {
+            number.ToWord().ShouldBe(word);
+        }
     }
 }
