@@ -33,12 +33,12 @@ namespace chequetools
             if (number < 20)
                 return easyNumbers[number];
 
+            if (number < 100)
+                return GetNumberWithoutHundred(number);
+
             var hunderdDigit = number/100;
+            return easyNumbers[hunderdDigit] + " hundred and " + GetNumberWithoutHundred(number);
 
-            if(hunderdDigit > 0)
-                return easyNumbers[hunderdDigit] + " hundred and " + GetNumberWithoutHundred(number);
-
-            return GetNumberWithoutHundred(number);
         }
 
         static string GetNumberWithoutHundred(int number)
