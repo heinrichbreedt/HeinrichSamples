@@ -35,5 +35,11 @@ namespace chequetools.test
         {
             number.ToWord().ShouldBe(word);
         }
+
+        [TestCase("21", "twentyone")]
+        public void twenty(string number, string word)
+        {
+            number.ToWord().ShouldBe(word);
+        }
     }
 }

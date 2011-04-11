@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace chequetools
 {
     public static class NumberToWord
     {
-        static List<string> easyNumbers = new List<string> {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
-                                                            "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", 
-                                                            "nineteen"};
+        static readonly List<string> easyNumbers = new List<string>
+            {
+                "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+                "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen",
+                "nineteen"
+            };
+
+        static readonly List<string> tens = new List<string> {"", "ten", "twenty"};
+
         public static string ToWord(this string numberText)
         {
             int number;
@@ -22,13 +26,13 @@ namespace chequetools
                 return "error";
             }
 
-            if(number < 20)
+            if (number < 20)
                 return easyNumbers[number];
-            
-            return "ARRGGG";
+
+            var onedigit = number%10;
+            var tendigit = number/10;
+
+            return tens[tendigit] + easyNumbers[onedigit];
         }
-
-
     }
-
 }
