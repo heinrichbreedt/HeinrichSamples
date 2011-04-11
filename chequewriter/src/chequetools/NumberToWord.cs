@@ -18,6 +18,12 @@ namespace chequetools
                 "sixty", "seventy", "eighty", "ninety"
             };
 
+        static readonly List<string> groups = new List<string>
+            {
+                "", " thousand and ", "twenty", "thirty", "fourty", "fifty", 
+                "sixty", "seventy", "eighty", "ninety"
+            };
+
         public static bool IsEvenHundred(this int number)
         {
             return number%100 == 0;
@@ -34,7 +40,23 @@ namespace chequetools
             {
                 return "error";
             }
+            if (number == 0) return string.Empty;
 
+            string word = null;
+            
+            var groupIndex = 0;
+            while(number > 0)
+            {
+                var remainder = number % 1000;
+                word = GetHundredsWord(remainder) + groups[groupIndex] + word;
+                number = number/1000;
+                groupIndex++;
+            }
+            return word;
+        }
+
+        static string GetHundredsWord(int number)
+        {
             if (number < 20)
                 return easyNumbers[number];
 
@@ -46,7 +68,6 @@ namespace chequetools
                 return easyNumbers[hunderdDigit] + " hundred";
 
             return easyNumbers[hunderdDigit] + " hundred and " + GetNumberWithoutHundred(number);
-
         }
 
         static string GetNumberWithoutHundred(int number)
