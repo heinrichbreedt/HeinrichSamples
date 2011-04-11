@@ -33,14 +33,23 @@ namespace chequetools
             if (number < 20)
                 return easyNumbers[number];
 
-            
-            var onedigit = number%10;
-            var tendigit = number/10;
-            if (tendigit > 9) tendigit = tendigit%10;
             var hunderdDigit = number/100;
 
             if(hunderdDigit > 0)
-                return easyNumbers[hunderdDigit] + " hundred and " + tens[tendigit] + easyNumbers[onedigit];
+                return easyNumbers[hunderdDigit] + " hundred and " + GetNumberWithoutHundred(number);
+
+            return GetNumberWithoutHundred(number);
+        }
+
+        static string GetNumberWithoutHundred(int number)
+        {
+            var lessHundredNumber = number%100;
+            if (lessHundredNumber < 20)
+                return easyNumbers[lessHundredNumber];
+
+
+            var onedigit = lessHundredNumber % 10;
+            var tendigit = lessHundredNumber / 10;
 
             return tens[tendigit] + easyNumbers[onedigit];
         }

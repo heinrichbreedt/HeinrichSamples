@@ -60,9 +60,10 @@ namespace chequetools.test
             number.ToWord().ShouldBe(word);
         }
 
-        [TestCase("191", "one hundred and ninetyone")]
-//        [TestCase("90", "ninety")]
-//        [TestCase("99", "ninetynine")]
+//        [TestCase("191", "one hundred and ninetyone")]
+//        [TestCase("237", "two hundred and thirtyseven")]
+//        [TestCase("853", "eight hundred and fiftythree")]
+        [TestCase("612", "six hundred and twelve")]
         public void hunderds(string number, string word)
         {
             number.ToWord().ShouldBe(word);
