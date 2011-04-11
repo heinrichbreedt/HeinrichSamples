@@ -18,6 +18,11 @@ namespace chequetools
                 "sixty", "seventy", "eighty", "ninety"
             };
 
+        public static bool IsEvenHundred(this int number)
+        {
+            return number%100 == 0;
+        }
+
         public static string ToWord(this string numberText)
         {
             int number;
@@ -37,6 +42,9 @@ namespace chequetools
                 return GetNumberWithoutHundred(number);
 
             var hunderdDigit = number/100;
+            if (number.IsEvenHundred())
+                return easyNumbers[hunderdDigit] + " hundred";
+
             return easyNumbers[hunderdDigit] + " hundred and " + GetNumberWithoutHundred(number);
 
         }
