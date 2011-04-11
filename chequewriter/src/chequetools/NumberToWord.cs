@@ -22,7 +22,13 @@ namespace chequetools
             if (number == 0)
                 return "";
 
-            return singleDigitNumbers[number];
+            if(number < 10)
+                return singleDigitNumbers[number];
+            else
+            {
+                var remainder = number%10;
+                return singleDigitNumbers[remainder] + "teen";
+            }
         }
 
 
