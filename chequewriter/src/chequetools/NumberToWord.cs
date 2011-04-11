@@ -7,6 +7,7 @@ namespace chequetools
 {
     public static class NumberToWord
     {
+        static List<string> singleDigitNumbers = new List<string> {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
         public static string ToWord(this string numberText)
         {
             int number;
@@ -21,8 +22,10 @@ namespace chequetools
             if (number == 0)
                 return "";
 
-            return "dont know yet";
+            return singleDigitNumbers[number];
         }
+
+
     }
 
 }
