@@ -7,9 +7,21 @@ namespace chequetools
 {
     public static class NumberToWord
     {
-        public static string ToWord(this string number)
+        public static string ToWord(this string numberText)
         {
-            return "error";
+            int number;
+            try
+            {
+                number = Convert.ToInt32(numberText);
+            }
+            catch (Exception)
+            {
+                return "error";
+            }
+            if (number == 0)
+                return "";
+
+            return "dont know yet";
         }
     }
 

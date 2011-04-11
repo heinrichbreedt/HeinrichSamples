@@ -6,7 +6,7 @@ namespace chequetools.test
     [TestFixture]
     public class NumberToWordsFixture
     {
-        [TestCase("1", "One")]
+        [TestCase("0", "")]
         public void SingleDigit(string number, string word)
         {
             number.ToWord().ShouldBe(word);
