@@ -33,8 +33,14 @@ namespace chequetools
             if (number < 20)
                 return easyNumbers[number];
 
+            
             var onedigit = number%10;
             var tendigit = number/10;
+            if (tendigit > 9) tendigit = tendigit%10;
+            var hunderdDigit = number/100;
+
+            if(hunderdDigit > 0)
+                return easyNumbers[hunderdDigit] + " hundred and " + tens[tendigit] + easyNumbers[onedigit];
 
             return tens[tendigit] + easyNumbers[onedigit];
         }
