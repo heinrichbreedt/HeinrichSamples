@@ -7,7 +7,9 @@ namespace chequetools
 {
     public static class NumberToWord
     {
-        static List<string> singleDigitNumbers = new List<string> {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+        static List<string> easyNumbers = new List<string> {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+                                                            "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", 
+                                                            "nineteen"};
         public static string ToWord(this string numberText)
         {
             int number;
@@ -19,16 +21,11 @@ namespace chequetools
             {
                 return "error";
             }
-            if (number == 0)
-                return "";
 
-            if(number < 10)
-                return singleDigitNumbers[number];
-            else
-            {
-                var remainder = number%10;
-                return singleDigitNumbers[remainder] + "teen";
-            }
+            if(number < 20)
+                return easyNumbers[number];
+            
+            return "ARRGGG";
         }
 
 

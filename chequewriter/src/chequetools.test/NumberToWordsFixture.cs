@@ -22,11 +22,15 @@ namespace chequetools.test
         }
 
         [TestCase("19", "nineteen")]
-        [TestCase("18", "eightteen")]
+        [TestCase("18", "eighteen")]
         [TestCase("17", "seventeen")]
         [TestCase("16", "sixteen")]
-//        [TestCase("15", "nineteen")]
+        [TestCase("15", "fifteen")]
         [TestCase("14", "fourteen")]
+        [TestCase("13", "thirteen")]
+        [TestCase("12", "twelve")]
+        [TestCase("11", "eleven")]
+        [TestCase("10", "ten")]
         public void DoubleDigit(string number, string word)
         {
             number.ToWord().ShouldBe(word);
